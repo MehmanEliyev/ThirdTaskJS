@@ -4,23 +4,31 @@ let sentence = "She baked cookies 4 the school fundraiser, and everyone thanked 
 
 // 1) -- simple way
 
+    sentence = sentence.replaceAll("4", "for"); 
+    console.log(sentence);
 
-sentence = sentence.replaceAll("4", "for"); 
-console.log(sentence);
+// 2) -- with loop and replace() method
 
-
-// 2) -- with loop
-
-
-for(let i=0; i <= sentence.length; i++){
-    if(sentence[i] == "4"){
-        let change = sentence[i] ;
-        change = "for";
-        sentence = sentence.replace("4", change);
+    for(let i=0; i <= sentence.length; i++){
+        if(sentence[i] == "4"){
+            let change = sentence[i] ;
+            change = "for";
+            sentence = sentence.replace("4", change);
+        }
     }
-}
-console.log(sentence);
+    console.log(sentence);
 
+// 3) -- with array (without replace() method)
+
+    let arr = sentence.split(" ");
+        
+    for(let i=0; i <= sentence.length; i++){
+        if(arr[i] == "4"){
+            arr[i] = "for" ;
+        }
+    }
+    let result = arr.join(" ");
+    console.log(result);
 
 
 // --------------------------   Task 2  -------------------------------------------
